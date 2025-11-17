@@ -3,20 +3,20 @@ import home from "../assets/images/home.jpg"
 
 export const menuData: Record<string, { name: string; image: string }[]> = {
   "Products": [
-    { name: "V Series", image: "../assets/images/home.jpg" },
-    { name: "T Series", image: "/images/t-series.jpg" },
+    { name: "V Series", image: home },
+    { name: "T Series", image: home},
     { name: "Smart Panel", image: home},
   ],
 
   "Solutions": [
-    { name: "Education Solution", image: "/images/education.jpg" },
-    { name: "Corporate Solution", image: "/images/corporate.jpg" },
-    { name: "Government Solution", image: "/images/government.jpg" },
+    { name: "Education Solution", image: home },
+    { name: "Corporate Solution", image:home },
+    { name: "Government Solution", image: home},
   ],
 
   "Support": [
-    { name: "Downloads", image: "/images/downloads.jpg" },
-    { name: "Warranty", image: "/images/warranty.jpg" },
-    { name: "Help Center", image: "/images/help.jpg" },
+    { name: "Downloads", image: home},
+    { name: "Warranty", image:home},
+    { name: "Help Center", image: home},
   ]
 };

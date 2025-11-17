@@ -10,15 +10,18 @@ export default function Header() {
   const [mobileSubMenu, setMobileSubMenu] = useState<string | null>(null);
 
   const handleOpen = (menuName: string) => {
-    if (window.innerWidth < 1024) return;
-    setOpenMenu(menuName);
-    setHoverItem(null);
-  };
+  if (window.innerWidth < 1024) return;
+  setOpenMenu(menuName);
 
-  const handleClose = () => {
-    setOpenMenu(null);
-    setHoverItem(null);
-  };
+  // Show first item by default if it's Products
+  const firstItem = menuData[menuName][0];
+  setHoverItem(firstItem);
+};
+
+const handleClose = () => {
+  setOpenMenu(null);
+  setHoverItem(null);
+};
 
   return (
     <div className="absolute top-0 left-0 w-full z-50 bg-transparent">
