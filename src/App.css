@@ -5,3 +5,9 @@
 body {
   @apply bg-[#F0F0FF] min-h-screen;
 }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
