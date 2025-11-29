@@ -157,20 +157,18 @@ export default function Header() {
               ) : (
                 <p className="text-gray-300">No variants</p>
               )}
-              
             </div>
-
-              {/* IMAGE PREVIEW */}
-              <div className="col-span-2 p-6 flex justify-center items-center">
-                {hoverVariant ? (
-                  <img
-                    src={hoverVariant.image}
-                    className="w-64 h-40 object-cover rounded-lg shadow-lg border border-white/20"
-                  />
-                ) : (
-                  <p className="text-gray-300">Hover a variant to preview</p>
-                )}
-              </div>
+            {/* IMAGE PREVIEW */}
+            <div className="col-span-2 p-6 flex justify-center items-center">
+              {hoverVariant ? ( 
+                <img
+                  src={hoverVariant.image}
+                  className="w-64 h-40 object-cover rounded-lg shadow-lg border border-white/20"
+                />
+              ) : (
+                <p className="text-gray-300">Hover a variant to preview</p>
+              )}
+            </div>
           </div>
         </div>
       )}
