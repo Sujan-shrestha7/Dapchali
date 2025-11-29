@@ -5,6 +5,8 @@ import Header from "./Header";
 import Head from "./Head";
 import homeimg from "../assets/images/home.jpg";
 import homevideo from "../assets/videos/video2.mp4";
+import video1 from "../assets/videos/video1.mp4";
+import video3 from "../assets/videos/video3.mp4";
 import world from "../assets/images/world.png";
 import featureimg1 from "../assets/images/featureimg1.jpg";
 import maxhubboards from "../assets/images/maxhubboards.jpg";
@@ -25,22 +27,22 @@ type Video = {
 const videos: Video[] = [
   {
     id: 1,
-    thumbnail: homeimg,
+    thumbnail: maxhubboards,
     src: homevideo,
     title: "Lovic X200 PRO",
     author: "Stefano Rinaldo",
   },
   {
     id: 2,
-    thumbnail: homeimg,
-    src: homevideo,
+    thumbnail: maxhubboards,
+    src: video1,
     title: "Lovic X200 PRO",
     author: "Stefano Rinaldo",
   },
   {
     id: 3,
     thumbnail: homeimg,
-    src: homevideo,
+    src: video3,
     title: "Lovic X200 PRO",
     author: "Stefano Rinaldo",
   },
