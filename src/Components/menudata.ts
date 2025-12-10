@@ -29,24 +29,17 @@ export const menuData: Record< string,{ name: string; image?: string; variants: 
     {
       name: "Education Solution",
       variants: [
-        { name: "Smart Classroom", image: f1 },
-        { name: "Remote Learning", image: f2 },
+        { name: "Intelligent Interactive Classroom", image: f1 },
+        { name: "Lecture Capture Classroom", image: f2 },
+        { name: "Group Collabration Classroom", image: f2 },
       ],
     },
     {
-      name: "Corporate Solution",
+      name: "Display Solution",
       variants: [
-        { name: "Conference Tools", image: f3 },
-        { name: "Wireless Casting", image: f4 },
+        { name: "LED Solution", image: f3 },
       ],
-    },
-    {
-      name: "Government Solution",
-      variants: [
-        { name: "Secure Meetings", image: f2 },
-        { name: "Data Encryption", image: f3 },
-      ],
-    },
+    }
   ],
 
   Support: [
