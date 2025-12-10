@@ -5,7 +5,6 @@ import home from "../assets/images/home.jpg";
 import f1 from "../assets/images/home.jpg";
 import f2 from "../assets/images/world.png";
 import f3 from "../assets/images/home.jpg";
-import f4 from "../assets/images/home.jpg";
 
 export const menuData: Record< string,{ name: string; image?: string; variants: { name: string; image: string }[]; }[]> = {
   Products: [
