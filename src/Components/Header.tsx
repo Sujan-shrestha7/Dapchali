@@ -111,7 +111,7 @@ export default function Header() {
       {/* ---------- DESKTOP MEGA MENU ---------- */}
       {openMenu && (
         <div
-          className="hidden lg:block absolute left-0 top-[80px] w-full bg-blue-500/70 backdrop-blur-xl z-50"
+          className="hidden lg:block absolute left-0 top-[80px] w-full bg-transparent backdrop-blur-xl z-50"
           onMouseLeave={handleClose}
         >
           <div className="grid grid-cols-5 p-6 text-white">

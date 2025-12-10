@@ -10,30 +10,17 @@ import f4 from "../assets/images/home.jpg";
 export const menuData: Record< string,{ name: string; image?: string; variants: { name: string; image: string }[]; }[]> = {
   Products: [
     {
-      name: "V Series",
+      name: "Interactive Flat Panel board",
       variants: [
-        { name: "4K UHD Display", image: f1 },
-        { name: "Wireless Screen Sharing", image: f2 },
-        { name: "Multi-Touch Support", image: f3 },
-        { name: "AI Noise Reduction", image: f4 },
+        { name: "U30 Series", image: f1 },
+        { name: "E40 Series", image: f2 }
       ],
     },
 
     {
-      name: "T Series",
+      name: "PTZ Camera",
       variants: [
-        { name: "High Brightness", image: f1 },
-        { name: "Android OS", image: f2 },
-        { name: "Anti-Glare Panel", image: f3 },
-      ],
-    },
-
-    {
-      name: "Smart Panel",
-      variants: [
-        { name: "Touch Control", image: f1 },
-        { name: "Fast CPU", image: f2 },
-        { name: "Energy Efficient", image: f3 },
+        { name: "UC P30", image: f1 }
       ],
     },
   ],
