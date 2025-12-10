@@ -25,6 +25,8 @@ export default function Header() {
     setHoverVariant(null);
   };
 
+  const isSupportMenu = openMenu === "Support";
+
   return (
     <div className="absolute top-0 left-0 w-full z-50 bg-transparent">
       {/* NAVBAR */}
@@ -114,13 +116,17 @@ export default function Header() {
           className="hidden lg:block absolute left-0 top-[80px] w-full bg-transparent backdrop-blur-xl z-50"
           onMouseLeave={handleClose}
         >
-          <div className="grid grid-cols-5 p-6 text-white">
+          <div
+            className={`grid ${
+              isSupportMenu ? "grid-cols-3" : "grid-cols-5"
+            } p-6 text-white`}
+          >
             {/* LEFT COLUMN */}
             <div className="border-r border-white/20 p-6 text-xl font-semibold">
               {openMenu}
             </div>
 
-            {/* MIDDLE COLUMN — ITEMS */}
+            {/* ITEMS COLUMN */}
             <div className="border-r border-white/20 p-6">
               {menuData[openMenu].map((item) => (
                 <div
@@ -138,30 +144,48 @@ export default function Header() {
               ))}
             </div>
 
-            {/* VARIANTS COLUMN (WIDER NOW) */}
-            <div className="border-r border-white/20 p-6 min-w-[350px]">
-              {hoverItem?.variants?.length ? (
-                hoverItem.variants.map((variant: any) => (
-                  <div
-                    key={variant.name}
-                    onMouseEnter={() => setHoverVariant(variant)}
-                    className={`cursor-pointer py-2 text-lg rounded ${
-                      hoverVariant?.name === variant.name
-                        ? "bg-white/20"
-                        : "hover:bg-white/10"
-                    }`}
-                  >
-                    {variant.name}
-                  </div>
-                ))
-              ) : (
-                <p className="text-gray-300">No variants</p>
-              )}
-            </div>
+            {/* ---------- SUPPORT = NO VARIANTS COLUMN ---------- */}
+            {!isSupportMenu && (
+              <>
+                {/* VARIANTS COLUMN */}
+                <div className="border-r border-white/20 p-6 min-w-[350px]">
+                  {hoverItem?.variants?.length ? (
+                    hoverItem.variants.map((variant: any) => (
+                      <div
+                        key={variant.name}
+                        onMouseEnter={() => setHoverVariant(variant)}
+                        className={`cursor-pointer py-2 text-lg rounded ${
+                          hoverVariant?.name === variant.name
+                            ? "bg-white/20"
+                            : "hover:bg-white/10"
+                        }`}
+                      >
+                        {variant.name}
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-gray-300">No variants</p>
+                  )}
+                </div>
+              </>
+            )}
 
-            {/* IMAGE PREVIEW */}
-            <div className="col-span-2 p-6 flex justify-center items-center">
-              {hoverVariant ? (
+            {/* IMAGE PREVIEW SECTION (works for all menus now) */}
+            <div
+              className={`${
+                isSupportMenu ? "col-span-1" : "col-span-2"
+              } p-6 flex justify-center items-center`}
+            >
+              {isSupportMenu ? (
+                hoverItem?.image ? (
+                  <img
+                    src={hoverItem.image}
+                    className="w-64 h-40 object-cover rounded-lg shadow-lg border border-white/20"
+                  />
+                ) : (
+                  <p className="text-gray-300">Hover to preview image</p>
+                )
+              ) : hoverVariant ? (
                 <img
                   src={hoverVariant.image}
                   className="w-64 h-40 object-cover rounded-lg shadow-lg border border-white/20"

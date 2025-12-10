@@ -1,26 +1,30 @@
 // menuData.tsx
 
 import home from "../assets/images/home.jpg";
-
 import f1 from "../assets/images/home.jpg";
 import f2 from "../assets/images/world.png";
 import f3 from "../assets/images/home.jpg";
 
-export const menuData: Record< string,{ name: string; image?: string; variants: { name: string; image: string }[]; }[]> = {
+export const menuData: Record<
+  string,
+  {
+    name: string;
+    image?: string;
+    variants?: { name: string; image: string }[];
+  }[]
+> = {
   Products: [
     {
       name: "Interactive Flat Panel board",
       variants: [
         { name: "U30 Series", image: f1 },
-        { name: "E40 Series", image: f2 }
+        { name: "E40 Series", image: f2 },
       ],
     },
 
     {
       name: "PTZ Camera",
-      variants: [
-        { name: "UC P30", image: f1 }
-      ],
+      variants: [{ name: "UC P30", image: f1 }],
     },
   ],
 
@@ -35,15 +39,14 @@ export const menuData: Record< string,{ name: string; image?: string; variants: 
     },
     {
       name: "Display Solution",
-      variants: [
-        { name: "LED Solution", image: f3 },
-      ],
-    }
+      variants: [{ name: "LED Solution", image: f3 }],
+    },
   ],
 
+  // ❗ Support has NO variants now
   Support: [
-    { name: "Downloads", variants: [], image: home },
-    { name: "Warranty", variants: [], image: home },
-    { name: "Help Center", variants: [], image: home },
+    { name: "Downloads", image: home },
+    { name: "Warranty", image: f2 },
+    { name: "Help Center", image: home },
   ],
 };
