@@ -2,11 +2,16 @@ import Head from "../Head";
 import React from "react";
 import { motion } from "framer-motion";
 import u30Image from "../../assets/images/U3.png";
+import u3home from "../../assets/images/u3home.jpg";
 
 const U30Series: React.FC = () => {
   return (
     <div>
       <Head />
+      <div className="relative w-full h-[500px] md:h-screen">
+              <img className="w-full h-full object-cover" src={u3home} alt="" />
+              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+            </div>
       <div className="px-[20px] md:px-[100px] py-[40px] md:py-[80px] flex flex-col gap-y-[80px] overflow-hidden">
         {/* Events */}
         <motion.div
