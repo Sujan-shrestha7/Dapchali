@@ -53,7 +53,7 @@ export default function Header() {
             Explore
           </button>
           <button className="hover:text-blue-400 transition-colors">
-            Partner Portal
+            Our Clients
           </button>
         </div>
 
