@@ -1,4 +1,5 @@
 import Head from "../Head";
+import Footer from "../Footer";
 import React from "react";
 import { motion } from "framer-motion";
 import u30Image from "../../assets/images/U3.png";
@@ -64,6 +65,7 @@ const U30Series: React.FC = () => {
           </div>
         </motion.div>
       </div>
+      <Footer/>
     </div>
   );
 };

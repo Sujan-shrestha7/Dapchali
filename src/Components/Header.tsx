@@ -2,6 +2,7 @@ import { useState } from "react";
 import { menuData } from "./menudata";
 import { Transition } from "@headlessui/react";
 import logo from "../assets/images/maxhub.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -9,6 +10,8 @@ export default function Header() {
   const [hoverVariant, setHoverVariant] = useState<any>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSubMenu, setMobileSubMenu] = useState<string | null>(null);
+
+  const navigate = useNavigate();
 
   const handleOpen = (menuName: string) => {
     if (window.innerWidth < 1024) return;
@@ -74,11 +77,7 @@ export default function Header() {
       </div>
 
       {/* ---------- MOBILE MENU ---------- */}
-      <Transition
-        show={mobileOpen}
-        enter="transition-all duration-300"
-        leave="transition-all duration-200"
-      >
+      <Transition show={mobileOpen} enter="transition-all duration-300" leave="transition-all duration-200">
         <div className="lg:hidden bg-black/50 backdrop-blur text-white px-6 pb-6">
           {["Products", "Solutions", "Support"].map((menu) => (
             <div key={menu} className="border-b border-gray-700 py-3">
@@ -116,11 +115,8 @@ export default function Header() {
           className="hidden lg:block absolute left-0 top-[80px] w-full bg-transparent backdrop-blur-xl z-50"
           onMouseLeave={handleClose}
         >
-          <div
-            className={`grid ${
-              isSupportMenu ? "grid-cols-3" : "grid-cols-5"
-            } p-6 text-white`}
-          >
+          <div className={`grid ${isSupportMenu ? "grid-cols-3" : "grid-cols-5"} p-6 text-white`}>
+            
             {/* LEFT COLUMN */}
             <div className="border-r border-white/20 p-6 text-xl font-semibold">
               {openMenu}
@@ -144,56 +140,45 @@ export default function Header() {
               ))}
             </div>
 
-            {/* ---------- SUPPORT = NO VARIANTS COLUMN ---------- */}
+            {/* VARIANTS COLUMN */}
             {!isSupportMenu && (
-              <>
-                {/* VARIANTS COLUMN */}
-                <div className="border-r border-white/20 p-6 min-w-[350px]">
-                  {hoverItem?.variants?.length ? (
-                    hoverItem.variants.map((variant: any) => (
-                      <div
-                        key={variant.name}
-                        onMouseEnter={() => setHoverVariant(variant)}
-                        className={`cursor-pointer py-2 text-lg rounded ${
-                          hoverVariant?.name === variant.name
-                            ? "bg-white/20"
-                            : "hover:bg-white/10"
-                        }`}
-                      >
-                        {variant.name}
-                      </div>
-                    ))
-                  ) : (
-                    <p className="text-gray-300">No variants</p>
-                  )}
-                </div>
-              </>
+              <div className="border-r border-white/20 p-6 min-w-[350px]">
+                {hoverItem?.variants?.length ? (
+                  hoverItem.variants.map((variant: any) => (
+                    <div
+                      key={variant.name}
+                      onMouseEnter={() => setHoverVariant(variant)}
+                      onClick={() => navigate(`/home/${variant.slug}`)}
+                      className={`cursor-pointer py-2 text-lg rounded ${
+                        hoverVariant?.name === variant.name
+                          ? "bg-white/20"
+                          : "hover:bg-white/10"
+                      }`}
+                    >
+                      {variant.name}
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-gray-300">No variants</p>
+                )}
+              </div>
             )}
 
-            {/* IMAGE PREVIEW SECTION (works for all menus now) */}
-            <div
-              className={`${
-                isSupportMenu ? "col-span-1" : "col-span-2"
-              } p-6 flex justify-center items-center`}
-            >
+            {/* IMAGE PREVIEW SECTION */}
+            <div className={`${isSupportMenu ? "col-span-1" : "col-span-2"} p-6 flex justify-center items-center`}>
               {isSupportMenu ? (
                 hoverItem?.image ? (
-                  <img
-                    src={hoverItem.image}
-                    className="w-64 h-40 object-cover rounded-lg shadow-lg border border-white/20"
-                  />
+                  <img src={hoverItem.image} className="w-64 h-40 object-cover rounded-lg shadow-lg border border-white/20" />
                 ) : (
                   <p className="text-gray-300">Hover to preview image</p>
                 )
               ) : hoverVariant ? (
-                <img
-                  src={hoverVariant.image}
-                  className="w-64 h-40 object-cover rounded-lg shadow-lg border border-white/20"
-                />
+                <img src={hoverVariant.image} className="w-64 h-40 object-cover rounded-lg shadow-lg border border-white/20" />
               ) : (
                 <p className="text-gray-300">Hover a variant to preview</p>
               )}
             </div>
+
           </div>
         </div>
       )}
