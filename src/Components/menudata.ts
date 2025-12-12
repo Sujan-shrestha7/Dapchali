@@ -45,8 +45,8 @@ export const menuData: Record<
 
   // ❗ Support has NO variants now
   Support: [
-    { name: "Downloads", image: home },
-    { name: "Warranty", image: f2 },
-    { name: "Help Center", image: home },
+    { name: "Warrenty Policy", image: home },
+    { name: "Resource Center", image: f2 },
+    { name: "Service Request", image: home },
   ],
 };
