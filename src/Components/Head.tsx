@@ -2,6 +2,7 @@ import { useState } from "react";
 import { menuData } from "./menudata";
 import { Transition } from "@headlessui/react";
 import logo from "../assets/images/maxhub.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -9,6 +10,7 @@ export default function Header() {
   const [hoverVariant, setHoverVariant] = useState<any>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSubMenu, setMobileSubMenu] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const handleOpen = (menuName: string) => {
     if (window.innerWidth < 1024) return;
@@ -31,7 +33,8 @@ export default function Header() {
       <div className="flex items-center justify-between px-6 lg:px-10 h-[80px]">
         <img
           src={logo}
-          className="h-[80px] w-[160px] md:h-[200px] md:w-[300px] object-contain"
+          onClick={()=>navigate("/")}
+          className="h-[80px] w-[160px] md:h-[200px] md:w-[300px] object-contain cursor-pointer"
           alt="Logo"
         />
 

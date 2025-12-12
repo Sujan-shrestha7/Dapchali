@@ -36,7 +36,8 @@ export default function Header() {
       <div className="flex items-center justify-between px-6 lg:px-10 h-[80px]">
         <img
           src={logo}
-          className="h-[80px] w-[160px] md:h-[200px] md:w-[300px] object-contain"
+          onClick={()=>navigate("/")}
+          className="h-[80px] w-[160px] md:h-[200px] md:w-[300px] object-contain cursor-pointer"
           alt="Logo"
         />
 
