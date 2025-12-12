@@ -10,9 +10,9 @@ const U30Series: React.FC = () => {
     <div>
       <Head />
       <div className="relative w-full h-[500px] md:h-screen">
-              <img className="w-full h-full object-cover" src={u3home} alt="" />
-              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-            </div>
+        <img className="w-full h-full object-cover" src={u3home} alt="" />
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      </div>
       <div className="px-[20px] md:px-[100px] py-[40px] md:py-[80px] flex flex-col gap-y-[80px] overflow-hidden">
         {/* Events */}
         <motion.div
@@ -56,16 +56,20 @@ const U30Series: React.FC = () => {
           />
           <div className="flex-1 flex flex-col gap-4">
             <h2 className="font-semibold text-xl md:text-2xl text-center text-[#10507a]">
-              FEATURES
+              Intelligent Touchscreen Technology
             </h2>
             <p className="text-gray-700 text-justify text-sm md:text-base leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
-              illum provident vero inventore quis qui, ab itaque quisquam natus.
+              Explore a wide range of writing possibilities with our advance
+              pressure sensitivity feature. Effortlessly control stroke
+              thickness by adjusting the force applied with your stykus. Plus,
+              Our palm rejection function allows you to rest your palm on the
+              screen while writing, ensuring a delightful and immersive writing
+              experience.
             </p>
           </div>
         </motion.div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
