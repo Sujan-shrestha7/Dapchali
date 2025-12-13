@@ -8,7 +8,9 @@ import u3home from "../../assets/images/u3home.jpg";
 const U30Series: React.FC = () => {
   return (
     <div>
+      <div className="sticky top-0 z-50 bg-[#000000] shadow-md transition-all duration-1000">
       <Head />
+      </div>
       <div className="relative w-full h-[500px] md:h-screen">
         <img className="w-full h-full object-cover" src={u3home} alt="" />
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>

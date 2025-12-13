@@ -31,7 +31,7 @@ export default function Header() {
   const isSupportMenu = openMenu === "Support";
 
   return (
-    <div className="absolute top-0 left-0 w-full z-50 bg-[#03124f]">
+    <div className="absolute top-0 left-0 w-full z-50 bg-[#000000]">
       {/* NAVBAR */}
       <div className="flex items-center justify-between px-6 lg:px-10 h-[80px]">
         <img
