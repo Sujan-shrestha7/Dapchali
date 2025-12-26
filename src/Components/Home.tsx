@@ -8,13 +8,13 @@ import homevideo from "../assets/videos/video2.mp4";
 import video1 from "../assets/videos/video1.mp4";
 import video3 from "../assets/videos/video3.mp4";
 import world from "../assets/images/world.png";
+import featureimg1 from "../assets/images/featureimg1.jpg";
 import maxhubboards from "../assets/images/maxhubboards.jpg";
 import Footer from "./Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import feature1 from "../assets/images/feature1.jpg";
 import feature2 from "../assets/images/feature2.jpg";
-import slider1 from "../assets/images/slider1.jpg";
 
 // Type for video
 type Video = {
@@ -50,7 +50,7 @@ const videos: Video[] = [
   },
 ];
 
-const images = [homeimg, slider1, maxhubboards];
+const images = [homeimg, featureimg1, maxhubboards];
 
 const Home = () => {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
@@ -119,7 +119,9 @@ const Home = () => {
               EVENTS / NOTICE
             </h2>
             <p className="text-gray-700 text-justify text-sm md:text-base leading-relaxed">
-              MAXHUB Smartboards are interactive flat panels designed for modern classrooms and meeting rooms. They feature a 4K UHD display with anti-glare technology for clear and comfortable viewing. With multi-touch support, multiple users can write or interact simultaneously using smooth, low-latency digital pens. MAXHUB Smartboards support wireless screen sharing from laptops and mobile devices and include multiple connectivity options like HDMI and USB-C. Many models have built-in cameras, microphones, and speakers, making them ideal for video conferencing, online teaching, and collaborative presentations.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+              voluptate culpa atque natus officia illum, nihil, assumenda autem
+              excepturi hic dolores officiis cumque, ad quaerat!
             </p>
           </div>
           <img
@@ -147,7 +149,8 @@ const Home = () => {
               FEATURES
             </h2>
             <p className="text-gray-700 text-justify text-sm md:text-base leading-relaxed">
-              MAXHUB Smartboards are interactive flat panels designed for modern classrooms and meeting rooms. They feature a 4K UHD display with anti-glare technology for clear and comfortable viewing. With multi-touch support, multiple users can write or interact simultaneously using smooth, low-latency digital pens. MAXHUB Smartboards support wireless screen sharing from laptops and mobile devices and include multiple connectivity options like HDMI and USB-C. Many models have built-in cameras, microphones, and speakers, making them ideal for video conferencing, online teaching, and collaborative presentations.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+              illum provident vero inventore quis qui, ab itaque quisquam natus.
             </p>
           </div>
         </motion.div>
