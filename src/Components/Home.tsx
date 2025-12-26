@@ -13,6 +13,8 @@ import maxhubboards from "../assets/images/maxhubboards.jpg";
 import Footer from "./Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import feature1 from "../assets/images/feature1.jpg";
+import feature2 from "../assets/images/feature2.jpg";
 
 // Type for video
 type Video = {
@@ -123,7 +125,7 @@ const Home = () => {
             </p>
           </div>
           <img
-            src={maxhubboards}
+            src={feature1}
             className="rounded-[10px] w-full md:w-[650px] h-auto md:h-[400px] object-cover"
             alt="Events"
           />
@@ -138,7 +140,7 @@ const Home = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <img
-            src={featureimg1}
+            src={feature2}
             className="rounded-[10px] w-full md:w-[650px] h-auto md:h-[400px] object-cover"
             alt="Features"
           />
