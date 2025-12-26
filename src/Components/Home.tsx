@@ -8,7 +8,6 @@ import homevideo from "../assets/videos/video2.mp4";
 import video1 from "../assets/videos/video1.mp4";
 import video3 from "../assets/videos/video3.mp4";
 import world from "../assets/images/world.png";
-import featureimg1 from "../assets/images/featureimg1.jpg";
 import maxhubboards from "../assets/images/maxhubboards.jpg";
 import Footer from "./Footer";
 import { motion, AnimatePresence } from "framer-motion";
